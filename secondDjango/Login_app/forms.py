@@ -5,7 +5,7 @@ from Login_app.models import UserInfo
 
 #  form for built in model USER
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(widget=forms.PasswordInput()) #custom pass chng
     class Meta:
         model = User
         fields = ('username',  'password', 'email')

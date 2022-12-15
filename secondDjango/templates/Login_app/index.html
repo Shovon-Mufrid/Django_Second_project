@@ -1,4 +1,22 @@
 {% extends 'Login_app/base.html' %}
 {% block body_block %}
-<h3> I am Shovon </h3>
+<h3> Index Page  </h3>
+
+{% if user.is_authenticated %}
+
+<p><i>welcome,</i> {{ user_basic_info.username }}</p>
+<p>Your Email: {{ user_basic_info.email }}</p>
+<p>Your Password: {{ user_basic_info.password }}</p>
+<p><a href="{{ user_more_info.fb_id }}">Your Facebook</a></p>
+<img src="/media/{{ user_more_info.profile_pic }}" width="200px" alt="">
+
+
+{% else %}
+<div class="alert alert-Danger">You are not Logged in</div>
+
+{% endif %}
+
+
+
+
 {% endblock %}

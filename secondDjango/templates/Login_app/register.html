@@ -1,7 +1,10 @@
 {%  extends 'Login_app/base.html' %}
 {% load static %}
 {% block body_block %}
+{% if registered %}
+<div class="alert alert-success">Congratulations! Registration Successful</div>
 
+{% else %}
 <form enctype="multipart/form-data" method="POST">
 
     {{ user_form.as_p }}
@@ -10,7 +13,7 @@
     <input type="submit" name="submit" value="Register">
 
 </form>
-
+{% endif %}
 
 
 
